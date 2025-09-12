@@ -18,3 +18,9 @@ async def example1() :
     await coroutine2()
 
 asyncio.run(example1())
+
+# [example1]
+# [1] start
+# [1] finish
+# [2] start
+# [2] finish

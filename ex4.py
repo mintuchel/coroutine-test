@@ -14,8 +14,15 @@ async def coroutine2() :
 
 async def example4() :
     print("[example4]")
-    
-    task1 = asyncio.create_task(coroutine1)
-    task2 = asyncio.create_task(coroutine2)
+
+    task1 = asyncio.create_task(coroutine1())
+    task2 = asyncio.create_task(coroutine2())
 
     print("tasks created in event loop")
+
+asyncio.run(example4())
+
+# [example4]
+# tasks created in event loop
+# [1] start
+# [2] start

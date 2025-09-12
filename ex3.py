@@ -15,12 +15,21 @@ async def coroutine2() :
 async def example3() :
     print("[example3]")
 
-    task1 = asyncio.create_task(coroutine1)
-    task2 = asyncio.create_task(coroutine2)
+    task1 = asyncio.create_task(coroutine1())
+    task2 = asyncio.create_task(coroutine2())
 
     # 현재 example3 코루틴 객체 3초동안 sleep
     await asyncio.sleep(3)
     print("tasks created in event loop")
-      
+
     await task1
     await task2
+
+asyncio.run(example3())
+
+# [example3]
+# [1] start
+# [2] start
+# [1] finish
+# [2] finish
+# tasks created in event loop
